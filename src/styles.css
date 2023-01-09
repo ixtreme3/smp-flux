@@ -1,0 +1,65 @@
+body {
+    font-family: Helvetica, sans-serif;
+    width: 1000px;
+    margin: 0 auto;
+    zoom: 95%;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+h5 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+p {
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+button {
+    margin: 20px 15px;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.wrapper-f {
+    padding: 15px;
+    border: 4mm ridge rgba(229, 228, 229, 0.9);
+}
+
+.wrapper {
+    padding: 15px;
+    border: 4mm ridge rgba(117, 117, 117, 0.9);
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    --angle: 0deg;
+    border: 4mm solid;
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}

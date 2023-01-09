@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css"
+import Wrapper1 from "./Wrapper1";
+import { useState } from "react";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Flux implementation</h1>
+      <Wrapper1/>
     </div>
   );
 }
+
+/* Версия без использования Flux - состояние поднимаем до родительского компонента и передаем переменную состояния
+   и коллбэки вниз по дереву элементов. Данный подход описан в вордовском файле.
+   Все закоментированные строки (в файлах Wrapper1.js Wrapper2.js Wrapper3.js) - код приложения без использования
+   паттерна Flux.
+*/
+// function App() {
+//     const [counter, setCounter] = useState(0);
+//
+//     const increaseCounter = () => {
+//         setCounter(counter + 1)
+//     }
+//
+//     const decreaseCounter = () => {
+//         setCounter(counter - 1)
+//     }
+//
+//     return (
+//         <div className="App">
+//             <h1>Flux implementation</h1>
+//             <Wrapper1 value={counter} incr={increaseCounter} decr={decreaseCounter}/>
+//         </div>
+//     );
+// }
 
 export default App;
